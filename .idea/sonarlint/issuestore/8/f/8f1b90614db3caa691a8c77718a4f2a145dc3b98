@@ -1,0 +1,10 @@
+
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(‘Ä‚…úÿÿÿÿ8•¼õü•.
+]	java:S125)"<This block of commented-out lines of code should be removed.(«Ž¯£þÿÿÿÿ8ÂÜã×˜.
+X	java:S125'"<This block of commented-out lines of code should be removed.(ïÒ¶¶8Ÿžæ×˜.
+Z	java:S106
+"9Replace this use of System.out or System.err by a logger.(˜–µœúÿÿÿÿ8÷öÑÜ“.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(Ë÷—8”æòü•.
+F
+java:S1172	")Remove this unused method parameter "id".(ðÍÊ¶8÷öÑÜ“.
+X	java:S125""<This block of commented-out lines of code should be removed.(›ñà¾8¿øŒ×˜.

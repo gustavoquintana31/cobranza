@@ -1,0 +1,6 @@
+py/com/test/cobranza/ec/ReceiptInvoice.class
+py/com/test/cobranza/boundary/CobranzaManager.class
+py/com/test/cobranza/ec/ReceiptValue.class
+py/com/test/cobranza/controller/CobranzasController.class
+py/com/test/cobranza/manager/ConnectionManager.class
+py/com/test/cobranza/ec/Receipt.class

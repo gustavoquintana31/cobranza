@@ -1,0 +1,23 @@
+
+r
+java:S1192"PDefine a constant instead of duplicating this literal "Receipt Number " 3 times.(¸È÷Àüÿÿÿÿ8™Îé×˜.
+E
+java:S1148U"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8™Îé×˜.
+Z	java:S1066"9Replace this use of System.out or System.err by a logger.(â¿øÿÿÿÿ8í¬Ó×˜.
+E	java:S108Z")Either remove or fill this block of code.(èî´Œ8™Îé×˜.
+E	java:S108%")Either remove or fill this block of code.(èî´Œ8ø‰×˜.
+N
+java:S1128"1Remove this unused import 'java.util.Properties'.(¬µ²8ÚµÈ×˜.
+E
+java:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8µÚÙÖ˜.
+E	java:S108A")Either remove or fill this block of code.(èî´Œ8í¬Ó×˜.
+E	java:S108_")Either remove or fill this block of code.(èî´Œ8™Îé×˜.
+E	java:S108<")Either remove or fill this block of code.(èî´Œ8í¬Ó×˜.
+E	java:S108 ")Either remove or fill this block of code.(èî´Œ8ŠŞ¦×˜.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(øÈÚ8ÏÈÏÖ˜.
+U	java:S1063"9Replace this use of System.out or System.err by a logger.(Ú½Õ‰8í¬Ó×˜.
+E
+java:S11487"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8í¬Ó×˜.
+T	java:S106T"9Replace this use of System.out or System.err by a logger.(ø„ïR8™Îé×˜.
+Z	java:S106Q"9Replace this use of System.out or System.err by a logger.(üíŸ¸ûÿÿÿÿ8™Îé×˜.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(¸È÷Àüÿÿÿÿ8çÍ£×˜.
