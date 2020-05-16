@@ -7,6 +7,7 @@ package cast.testapp.receipt.controller;
 
 import cast.testapp.catastro.controller.ClienteController;
 import cast.testapp.catastro.entities.Cliente;
+import cast.testapp.catastro.entities.Cliente.TipoDoc;
 import cast.testapp.invoice.entities.Invoice;
 import cast.testapp.receipt.boundary.ReceiptManager;
 import java.util.Date;
@@ -41,7 +42,7 @@ public class ReceiptControllerTest {
     
     @Before
     public void setUp() {
-        mockClientCtrl = mock (ClienteController.class);
+        mockClientCtrl = mock(ClienteController.class);
         mockReceiptMgr = mock(ReceiptManager.class);        
         instance = new ReceiptController(mockClientCtrl,mockReceiptMgr);
     }
@@ -54,17 +55,27 @@ public class ReceiptControllerTest {
      * Test of listPendingInvoicesByClient method, of class ReceiptController.
      */
     @Test
-    public void testListPendingInvoicesByClient() {
-        //inicializacion
-        Cliente cliente = null;
-        
+    public void testListPendingInvoicesByClientNotClient() {
         //parametros
         String tipoDoc="CI";
         String nroDoc="234";
         Date fecha  = new Date();
         when(mockClientCtrl.consultarCliente(tipoDoc, nroDoc)).thenReturn(null);
-        List<Invoice> listInvoices = instance.listPendingInvoicesByClient(tipoDoc, nroDoc, fecha);
-        assertTrue("No se encontro ningun cliente", listInvoices.isEmpty());
+        List<Invoice> listInvoices = instance.listPendingInvoicesByClient("RUC", nroDoc, fecha);
+        assertTrue("No se encontro ninguna factura pendiente", listInvoices.isEmpty());
     }
+      @Test
+    public void testListPendingInvoicesByClientWithClient() {                
+        //parametros
+        String tipoDoc="CI";
+        String nroDoc="234";
+        Date fecha  = new Date();
+        //inicializacion
+        Cliente cliente = new Cliente(TipoDoc.CIP,nroDoc,"","");        
+        when(mockClientCtrl.consultarCliente(tipoDoc, nroDoc)).thenReturn(cliente);
+        List<Invoice> listInvoices = instance.listPendingInvoicesByClient(tipoDoc, nroDoc, fecha);
+        assertTrue("No se encontro ninguna factura pendiente", listInvoices.isEmpty());
+    }
+    
     
 }

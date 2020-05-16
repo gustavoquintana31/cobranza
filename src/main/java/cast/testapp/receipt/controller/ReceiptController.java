@@ -32,26 +32,38 @@ public class ReceiptController {
         this.clienteCtrl = clienteCtrl;
         this.receiptMgr = receiptMgr;
     }
-    
+    /***
+     * listPendingInvoicesByClient
+     * BR1	Listar Facturas Pendientes por cliente, fecha de vencimiento
+     * @param tipoDoc
+     * @param numeroDoc
+     * @param fecha
+     * @return 
+     */
     public List<Invoice> listPendingInvoicesByClient(String tipoDoc, String numeroDoc, Date fecha){
         
         //Consulta al cliente
         Cliente cliente = clienteCtrl.consultarCliente(tipoDoc, numeroDoc);
         
-        
-        
         if (cliente == null){
-            System.out.println("No se encuentra el cliente");
+            throw new IllegalArgumentException("No se encuentra el cliente");
         }
         else{
             System.out.println("Cliente encontrado > cliente:" + cliente);
         }
+        
+        //Controler de Facturacion y obtener las facturas pendientes por x fecha        
+        //@TODO
         return Collections.EMPTY_LIST;
     }
+    public static void main(String[] args) {
+       ReceiptController ctrl = new ReceiptController();
+       ctrl.listPendingInvoicesByClient("1223","1231231", new Date());
+        
+    }
 //        
-    /*
-    BR1	Listar Facturas Pendientes por cliente, fecha de vencimiento		
-    BR2	Cobrar facturas pendientes		
+    /*    
+    BR2	Cobrar facturas pendientes
     BR2-1	Utilizar un numero de recibo unico		
     BR3	Anular Cobranza		
     BR4	Listar Cobranzas anuladas		
