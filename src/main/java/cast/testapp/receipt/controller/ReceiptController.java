@@ -8,9 +8,12 @@ package cast.testapp.receipt.controller;
 import cast.testapp.catastro.controller.ClienteController;
 import cast.testapp.catastro.controller.ClienteControllerImpl;
 import cast.testapp.catastro.entities.Cliente;
+import cast.testapp.invoice.controller.InvoiceController;
 import cast.testapp.invoice.entities.Invoice;
 import cast.testapp.receipt.boundary.ReceiptManager;
 import cast.testapp.receipt.boundary.impl.ReceiptManagerImpl;
+import cast.testapp.catastro.entities.DocumentType;
+import cast.testapp.receipt.entities.ErrorMessage;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -23,14 +26,17 @@ public class ReceiptController {
     
     ClienteController clienteCtrl;
     ReceiptManager receiptMgr;
+    InvoiceController invoiceCtrl;
     
     public ReceiptController(){
         clienteCtrl = new ClienteControllerImpl();
         receiptMgr = new ReceiptManagerImpl();
+        invoiceCtrl = new InvoiceController();
     }
-    public ReceiptController(ClienteController clienteCtrl,ReceiptManager receiptMgr){
+    public ReceiptController(ClienteController clienteCtrl,ReceiptManager receiptMgr, InvoiceController invoiceCtrl){
         this.clienteCtrl = clienteCtrl;
         this.receiptMgr = receiptMgr;
+        this.invoiceCtrl = invoiceCtrl;
     }
     /***
      * listPendingInvoicesByClient
@@ -40,25 +46,26 @@ public class ReceiptController {
      * @param fecha
      * @return 
      */
-    public List<Invoice> listPendingInvoicesByClient(String tipoDoc, String numeroDoc, Date fecha){
+    public List<Invoice> listPendingInvoicesByClient(DocumentType docType, String numeroDoc, Date fecha){
         
         //Consulta al cliente
-        Cliente cliente = clienteCtrl.consultarCliente(tipoDoc, numeroDoc);
+        Cliente cliente = clienteCtrl.consultarCliente(docType, numeroDoc);
         
         if (cliente == null){
-            throw new IllegalArgumentException("No se encuentra el cliente");
+            throw new IllegalArgumentException(ErrorMessage.CLIENT_NOT_FOUND.toString());
         }
         else{
             System.out.println("Cliente encontrado > cliente:" + cliente);
         }
         
-        //Controler de Facturacion y obtener las facturas pendientes por x fecha        
+        //Controler de Facturacion y obtener las facturas pendientes por x fecha   
+        
         //@TODO
         return Collections.EMPTY_LIST;
     }
     public static void main(String[] args) {
        ReceiptController ctrl = new ReceiptController();
-       ctrl.listPendingInvoicesByClient("1223","1231231", new Date());
+       ctrl.listPendingInvoicesByClient(DocumentType.RUC,"1231231", new Date());
         
     }
 //        
