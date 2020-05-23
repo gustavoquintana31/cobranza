@@ -59,7 +59,7 @@ public class ReceiptController {
         }
         
         //Controler de Facturacion y obtener las facturas pendientes por x fecha   
-        
+        invoiceCtrl.listPendingInvoicesByClient(cliente.id, fecha);
         //@TODO
         return Collections.EMPTY_LIST;
     }

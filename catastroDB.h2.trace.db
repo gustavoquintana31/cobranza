@@ -1,0 +1,4 @@
+2020-05-16 11:06:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "CLIENTES" ya existe
+Table "CLIENTES" already exists; SQL statement:
+CREATE TABLE clientes (id NUMERIC IDENTITY PRIMARY KEY,parent_id NUMERIC,tipo_doc VARCHAR(5) NOT NULL,numero_doc VARCHAR(16) not null,razon_social VARCHAR(128) not null,nombre_comercial VARCHAR(128),direccion_facturacion VARCHAR(512),direccion_entrega VARCHAR(512)) [42101-200]
