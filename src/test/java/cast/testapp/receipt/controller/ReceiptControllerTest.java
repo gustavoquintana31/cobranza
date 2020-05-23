@@ -15,8 +15,11 @@ import cast.testapp.invoice.entities.Invoice;
 import cast.testapp.receipt.boundary.ReceiptManager;
 import cast.testapp.catastro.entities.DocumentType;
 import cast.testapp.receipt.entities.ErrorMessage;
+import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;    
@@ -24,18 +27,25 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import org.mockito.runners.MockitoJUnitRunner;
 
 /**
  *
  * @author cbustamante
  */
+@RunWith(MockitoJUnitRunner.class)
 public class ReceiptControllerTest {
     ReceiptController instance;
     ClienteController mockClientCtrl;
     ReceiptManager mockReceiptMgr;
     InvoiceController mockInvoiceCtrl;
+    
+    
     public ReceiptControllerTest() {
     }
     
@@ -82,7 +92,6 @@ public class ReceiptControllerTest {
     @Test
     public void testListPendingInvoicesByClientWithClient() {                
         //parametros
-        String tipoDoc="CI";
         String nroDoc="234";
         Date fecha  = new Date();
         //inicializacion
@@ -92,5 +101,55 @@ public class ReceiptControllerTest {
         assertTrue("No se encontro ninguna factura pendiente", listInvoices.isEmpty());
     }
     
+     @Test
+    public void testListPendingInvoicesByDatesBeforeActualDate() {                
+        //parametros
+        String nroDoc="234";
+        Date fecha  = new Date();
+        Calendar calendario =  Calendar.getInstance();
+        calendario.setTime(fecha);
+        calendario.set(Calendar.YEAR,2015);
+        
+        //Mock Clientes
+        Cliente cliente = new Cliente(TipoDoc.CIP,nroDoc,"","");        
+        cliente.id=1l;
+        when(mockClientCtrl.consultarCliente(DocumentType.CI, nroDoc)).thenReturn(cliente);
+        
+        //Mock InvoiceCtrl
+        when(mockInvoiceCtrl.listPendingInvoicesByClient(cliente.id, calendario.getTime())).thenReturn(Collections.EMPTY_LIST);
+              
+        //Invocar a la validacion de facturas pendientes por cliente
+        List<Invoice> listInvoices = instance.listPendingInvoicesByClient(DocumentType.CI, nroDoc, calendario.getTime());
+        
+        //Validar si ingreso o no en este metodo        
+        Mockito.verify(mockInvoiceCtrl).listPendingInvoicesByClient(cliente.id, calendario.getTime());
+        
+        assertTrue("No se encontro ninguna factura pendiente", listInvoices.isEmpty());
+    }
+    @Test
+    public void testListPendingInvoicesByDatesAfterActualDate() {                
+        //parametros
+        String nroDoc="234";
+        Date fecha  = new Date();
+        Calendar calendario =  Calendar.getInstance();
+        calendario.setTime(fecha);
+        calendario.set(Calendar.YEAR,2099);
+        
+        //Mock Clientes
+        Cliente cliente = new Cliente(TipoDoc.CIP,nroDoc,"","");        
+        cliente.id=1l;
+        when(mockClientCtrl.consultarCliente(DocumentType.CI, nroDoc)).thenReturn(cliente);
+        
+        //Mock InvoiceCtrl
+        when(mockInvoiceCtrl.listPendingInvoicesByClient(cliente.id, calendario.getTime())).thenReturn(Collections.EMPTY_LIST);
+              
+        //Invocar a la validacion de facturas pendientes por cliente
+        List<Invoice> listInvoices = instance.listPendingInvoicesByClient(DocumentType.CI, nroDoc, calendario.getTime());
+        
+        //Validar si ingreso o no en este metodo        
+        Mockito.verify(mockInvoiceCtrl, Mockito.never()).listPendingInvoicesByClient(cliente.id, calendario.getTime());
+        
+        assertTrue("No se encontro ninguna factura pendiente", listInvoices.isEmpty());
+    }
     
 }

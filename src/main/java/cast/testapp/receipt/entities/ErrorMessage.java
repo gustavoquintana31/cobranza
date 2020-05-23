@@ -10,7 +10,8 @@ package cast.testapp.receipt.entities;
  * @author cbustamante
  */
 public enum ErrorMessage {
-    CLIENT_NOT_FOUND("CLIENT NOT FOUD");
+    CLIENT_NOT_FOUND("CLIENT NOT FOUD"),
+    INVALID_DATE_BEFORE("INVALID DATE");
     private String mensaje;
 
     private ErrorMessage(String mensaje) {

@@ -58,8 +58,10 @@ public class ReceiptController {
             System.out.println("Cliente encontrado > cliente:" + cliente);
         }
         
-        //Controler de Facturacion y obtener las facturas pendientes por x fecha   
-        invoiceCtrl.listPendingInvoicesByClient(cliente.id, fecha);
+        if (fecha.before(new Date())){
+            //Controler de Facturacion y obtener las facturas pendientes por x fecha   
+            invoiceCtrl.listPendingInvoicesByClient(cliente.id, fecha);
+        }      
         //@TODO
         return Collections.EMPTY_LIST;
     }
