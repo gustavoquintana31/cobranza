@@ -147,5 +147,19 @@ public class ReceiptController {
        ctrl.listPendingInvoicesByClient(DocumentType.RUC,"1231231", new Date());
         
     }
-    
+
+    public Boolean verifyIfReceiptExist(Integer id){
+        Receipt receipt = receiptMgr.getById(id);
+        return receipt != null;
+    }
+
+    public Boolean cancelReceipt(Integer id){
+        if(verifyIfReceiptExist(id)){
+            return receiptMgr.cancelReceipt(id);
+        }else{
+            throw new IllegalArgumentException(ErrorMessage.RECEIPT_NOT_FOUND.toString());
+        }
+    }
+
+
 }

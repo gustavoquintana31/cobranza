@@ -27,5 +27,5 @@ public interface GenericDao<T, K extends Serializable> {
     
     List<T> getAll(int limit, int offset);
 
-    
+    Boolean cancelReceipt(K key);
 }

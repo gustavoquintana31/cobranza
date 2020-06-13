@@ -219,5 +219,13 @@ public class ReceiptControllerTest {
         //instance.receiptInvoicePending(cliente, invoiceList);
     }
 
+    @Test
+    public void testReceiptCancel(){
+        Integer receiptId = 1;
+        when(mockReceiptMgr.getById(receiptId)).thenReturn(new Receipt());
+        when(mockReceiptMgr.cancelReceipt(receiptId)).thenReturn(true);
+        Boolean result = instance.cancelReceipt(receiptId);
+        assertTrue("El recibo no logro ser anulado", result);
+    }
     
 }

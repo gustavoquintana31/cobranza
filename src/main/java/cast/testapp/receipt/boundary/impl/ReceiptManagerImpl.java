@@ -1,6 +1,8 @@
 package cast.testapp.receipt.boundary.impl;
 
 import cast.testapp.receipt.boundary.ReceiptManager;
+
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -147,6 +149,19 @@ public class ReceiptManagerImpl implements ReceiptManager {
 			}catch (Exception e){}
 		}
 		return null;
+	}
+
+	@Override
+	public Boolean cancelReceipt(Integer id){
+		String cancelReceiptSQL = "update receipt set cancelled = true where id = " + id;
+		try(Statement updateSt = ConnectionManager.getConnection().createStatement()){
+			boolean result = updateSt.execute(cancelReceiptSQL);
+			if(result) return true;
+		}catch (Exception ex){
+			ex.printStackTrace();
+			return  false;
+		}
+		return false;
 	}
 
 }
