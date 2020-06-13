@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe2cdb98-6f5e-4873-b06a-9a105f27a6e0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cast/testapp/receipt/boundary/ReceiptManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cast/testapp/receipt/boundary/ReceiptManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cast/testapp/receipt/boundary/impl/BankManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cast/testapp/receipt/boundary/impl/BankManagerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cast/testapp/receipt/boundary/impl/ReceiptInvoiceManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cast/testapp/receipt/boundary/impl/ReceiptInvoiceManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cast/testapp/receipt/boundary/impl/ReceiptManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cast/testapp/receipt/boundary/impl/ReceiptManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cast/testapp/receipt/controller/ReceiptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cast/testapp/receipt/controller/ReceiptController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cast/testapp/receipt/entities/ErrorMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cast/testapp/receipt/entities/ErrorMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/util/GenericDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/GenericDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cast/testapp/receipt/controller/ReceiptControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cast/testapp/receipt/controller/ReceiptControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cast/testapp/receipt/boundary/impl/ReceiptManagerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cast/testapp/receipt/boundary/impl/ReceiptManagerImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cast/testapp/receipt/controller/ReceiptController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cast/testapp/receipt/entities/ErrorMessage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

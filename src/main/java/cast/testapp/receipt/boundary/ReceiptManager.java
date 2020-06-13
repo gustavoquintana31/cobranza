@@ -17,5 +17,5 @@ public interface ReceiptManager extends GenericDao<Receipt, Integer> {
 
     String getLastReceiptNumber();
 
-    
+    Boolean cancelReceipt(Integer key);
 }

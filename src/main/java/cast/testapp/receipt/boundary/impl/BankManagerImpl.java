@@ -97,9 +97,4 @@ public class BankManagerImpl  implements BankManager{
     public List<Bank> getAll(int limit, int offset) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-	@Override
-	public Boolean cancelReceipt(Integer key) {
-		return null;
-	}
 }
