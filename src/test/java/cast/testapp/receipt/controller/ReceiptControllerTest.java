@@ -5,15 +5,15 @@
  */
 package cast.testapp.receipt.controller;
 
-import cast.testapp.catastro.controller.ClienteController;
-import cast.testapp.catastro.controller.exceptions.ValidacionClientesException;
-import cast.testapp.catastro.entities.Cliente;
-import cast.testapp.catastro.entities.Cliente.TipoDoc;
-import cast.testapp.catastro.entities.MensajeError;
+import cast.testapp.catastro.clientes.ClienteController;
+import cast.testapp.catastro.clientes.ValidacionClientesException;
+import cast.testapp.catastro.clientes.Cliente;
+import cast.testapp.catastro.clientes.Cliente.TipoDoc;
+import cast.testapp.catastro.clientes.MensajeError;
 import cast.testapp.invoice.controller.InvoiceController;
 import cast.testapp.invoice.entities.Invoice;
 import cast.testapp.receipt.boundary.ReceiptManager;
-import cast.testapp.catastro.entities.DocumentType;
+import cast.testapp.catastro.clientes.DocumentType;
 import cast.testapp.receipt.entities.ErrorMessage;
 
 import java.util.*;

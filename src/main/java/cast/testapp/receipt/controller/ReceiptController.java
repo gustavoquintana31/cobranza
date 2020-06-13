@@ -5,14 +5,14 @@
  */
 package cast.testapp.receipt.controller;
 
-import cast.testapp.catastro.controller.ClienteController;
-import cast.testapp.catastro.controller.ClienteControllerImpl;
-import cast.testapp.catastro.entities.Cliente;
+import cast.testapp.catastro.clientes.ClienteController;
+import cast.testapp.catastro.clientes.ClienteControllerImpl;
+import cast.testapp.catastro.clientes.Cliente;
 import cast.testapp.invoice.controller.InvoiceController;
 import cast.testapp.invoice.entities.Invoice;
 import cast.testapp.receipt.boundary.ReceiptManager;
 import cast.testapp.receipt.boundary.impl.ReceiptManagerImpl;
-import cast.testapp.catastro.entities.DocumentType;
+import cast.testapp.catastro.clientes.DocumentType;
 import cast.testapp.receipt.entities.ErrorMessage;
 import cast.testapp.receipt.entities.Receipt;
 
@@ -62,7 +62,7 @@ public class ReceiptController {
     public List<Invoice> listPendingInvoicesByClient(DocumentType docType, String numeroDoc, Date fecha){
         
         //Consulta al cliente
-        Cliente cliente = clienteCtrl.consultarCliente(docType, numeroDoc);
+        Cliente cliente = clienteCtrl.consultaUno(docType, numeroDoc);
         
         if (cliente == null){
             throw new IllegalArgumentException(ErrorMessage.CLIENT_NOT_FOUND.toString());
