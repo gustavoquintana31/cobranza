@@ -3,15 +3,68 @@
   <component name="ChangeListManager">
     <list default="true" id="fe2cdb98-6f5e-4873-b06a-9a105f27a6e0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cast/testapp/receipt/boundary/ReceiptManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cast/testapp/receipt/boundary/ReceiptManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cast/testapp/receipt/boundary/impl/BankManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cast/testapp/receipt/boundary/impl/BankManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cast/testapp/receipt/boundary/impl/ReceiptInvoiceManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cast/testapp/receipt/boundary/impl/ReceiptInvoiceManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/GenericDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/GenericDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cast/testapp/receipt/boundary/ReceiptManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cast/testapp/receipt/boundary/ReceiptManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cast/testapp/receipt/boundary/impl/ReceiptManagerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cast/testapp/receipt/boundary/impl/ReceiptManagerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cast/testapp/receipt/controller/ReceiptController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cast/testapp/receipt/controller/ReceiptController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cobranza-1.0.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/cobranza-1.0.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-cast.testapp.receipt.controller.ReceiptControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-cast.testapp.receipt.controller.ReceiptControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cast.testapp.receipt.controller.ReceiptControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cast.testapp.receipt.controller.ReceiptControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cast/testapp/receipt/controller/ReceiptControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cast/testapp/receipt/controller/ReceiptControllerTest.class" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/target/" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/cast/testapp/receipt/controller/ReceiptControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="221" column="9" lean-forward="true" selection-start-line="221" selection-start-column="9" selection-end-line="221" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cast/testapp/receipt/controller/ReceiptController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="107" column="8" selection-start-line="107" selection-start-column="8" selection-end-line="107" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cast/testapp/receipt/boundary/impl/ReceiptManagerImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2448">
+              <caret line="137" column="75" selection-start-line="137" selection-start-column="75" selection-end-line="137" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cast/testapp/receipt/entities/Receipt.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="29" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="29" />
+              <folding>
+                <element signature="e#1073#1074#0" expanded="true" />
+                <element signature="e#1112#1113#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -22,6 +75,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/test/java/cast/testapp/receipt/controller/ReceiptControllerTest.java" />
+      </list>
+    </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -40,12 +100,24 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1592019457339" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1592058435717" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.19143577" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration default="true" type="Applet">
@@ -75,14 +147,12 @@
       </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="TestNG">
-      <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <properties />
       <listeners />
@@ -130,6 +200,76 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="27" width="1366" height="741" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2579666" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32928944" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.60034907" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32984293" />
+      <window_info anchor="bottom" id="SonarLint" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49924126" visible="true" weight="0.5357766" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007587" side_tool="true" weight="0.5357766" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32984293" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32928944" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.32852808" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2579666" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32928944" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.60034907" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32984293" />
+      <window_info anchor="bottom" id="SonarLint" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49924126" visible="true" weight="0.5357766" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007587" side_tool="true" weight="0.5357766" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32984293" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32928944" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.32852808" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout-to-restore>
+  </component>
   <component name="WindowStateProjectService">
     <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1592054051277">
       <screen x="0" y="0" width="1536" height="824" />
@@ -155,6 +295,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1592053893052" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cast/testapp/receipt/controller/ReceiptController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="107" column="8" selection-start-line="107" selection-start-column="8" selection-end-line="107" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cast/testapp/receipt/controller/ReceiptControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="221" column="9" lean-forward="true" selection-start-line="221" selection-start-column="9" selection-end-line="221" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
