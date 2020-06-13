@@ -15,11 +15,10 @@ import cast.testapp.invoice.entities.Invoice;
 import cast.testapp.receipt.boundary.ReceiptManager;
 import cast.testapp.catastro.entities.DocumentType;
 import cast.testapp.receipt.entities.ErrorMessage;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
+
+import java.util.*;
+
+import cast.testapp.receipt.entities.Receipt;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;    
@@ -100,6 +99,7 @@ public class ReceiptControllerTest {
         List<Invoice> listInvoices = instance.listPendingInvoicesByClient(DocumentType.CI, nroDoc, fecha);
         assertTrue("No se encontro ninguna factura pendiente", listInvoices.isEmpty());
     }
+
     
      @Test
     public void testListPendingInvoicesByDatesBeforeActualDate() {                
@@ -151,5 +151,73 @@ public class ReceiptControllerTest {
         
         assertTrue("No se encontro ninguna factura pendiente", listInvoices.isEmpty());
     }
+
+    @Test
+    public void testReceiptUniqueNumberNotFound() {
+        Receipt receipt = new Receipt();
+        String nroDoc="234";
+        Cliente cliente = new Cliente();
+
+        List<Invoice> invoiceList = new ArrayList<>();
+        Invoice invoice = new Invoice();
+        invoice.setId(1);
+        invoiceList.add(invoice);
+
+        when(mockReceiptMgr.getLastReceiptNumber()).thenReturn(null);
+
+        IllegalArgumentException exception = assertThrows(
+                IllegalArgumentException.class, () -> {
+                    instance.receiptInvoicePending(cliente, invoiceList);
+                });
+        String actualMessage = exception.getMessage();
+        assertTrue(actualMessage.contains(ErrorMessage.RECEIPT_NUMBER_NOT_FOUND.toString()));
+
+    }
+
+
+    @Test
+    public void testReceiptInvoicePendingNotSave() {
+        Receipt receipt = new Receipt();
+        String nroDoc="234";
+        Cliente cliente = new Cliente();
+
+
+        List<Invoice> invoiceList = new ArrayList<>();
+        Invoice invoice = new Invoice();
+        invoice.setId(1);
+        invoiceList.add(invoice);
+
+        when(mockReceiptMgr.getLastReceiptNumber()).thenReturn("001-001-0000001");
+
+        when(mockReceiptMgr.add(receipt)).thenReturn(false);
+
+        IllegalArgumentException exception = assertThrows(
+                IllegalArgumentException.class, () -> {
+                    instance.receiptInvoicePending(cliente, invoiceList);
+                });
+        String actualMessage = exception.getMessage();
+        assertTrue(actualMessage.contains(ErrorMessage.RECEIPT_NOT_CREATE.toString()));
+
+    }
+
+    @Test
+    public void testReceiptInvoicePendingSave() {
+        Receipt receipt = new Receipt();
+        String nroDoc="234";
+        Cliente cliente = new Cliente();
+
+        List<Invoice> invoiceList = new ArrayList<>();
+        Invoice invoice = new Invoice();
+        invoice.setId(1);
+        invoiceList.add(invoice);
+        when(mockReceiptMgr.getLastReceiptNumber()).thenReturn("001-001-0000001");
+
+        //Validar si ingreso o no en este metodo
+        //Mockito.verify(instance, Mockito.never()).getUniqueReceiptNumber("001-001-0000001");
+
+        when(mockReceiptMgr.add(receipt)).thenReturn(true);
+        //instance.receiptInvoicePending(cliente, invoiceList);
+    }
+
     
 }

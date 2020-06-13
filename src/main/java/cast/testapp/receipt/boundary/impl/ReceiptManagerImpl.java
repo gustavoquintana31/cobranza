@@ -118,4 +118,35 @@ public class ReceiptManagerImpl implements ReceiptManager {
     public List<Receipt> getAll(int limit, int offset) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+	@Override
+	public String getLastReceiptNumber() {
+
+
+		List<Receipt> listReceipt = new ArrayList();
+
+		PreparedStatement s1 = null;
+		ResultSet rs = null;
+
+		try {
+			s1 = ConnectionManager.getConnection().prepareStatement(getStatement()+" ORDER BY creation_date desc limit 1");
+			rs = s1.executeQuery();
+			if(rs.next()){
+				String receiptNumber = rs.getString("receipt_branch")+"-"+rs.getString("receipt_printer")
+										+"-"+rs.getString("receipt_number");
+				return receiptNumber;
+			}
+		}catch (Throwable th){
+			return null;
+		}finally{
+			try {
+				s1.close();
+			}catch (Exception e){}
+			try {
+				rs.close();
+			}catch (Exception e){}
+		}
+		return null;
+	}
+
 }
