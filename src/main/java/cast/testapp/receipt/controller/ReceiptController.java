@@ -5,14 +5,15 @@
  */
 package cast.testapp.receipt.controller;
 
+
+import cast.testapp.catastro.clientes.Cliente;
 import cast.testapp.catastro.clientes.ClienteController;
 import cast.testapp.catastro.clientes.ClienteControllerImpl;
-import cast.testapp.catastro.clientes.Cliente;
+import cast.testapp.catastro.clientes.DocumentType;
 import cast.testapp.invoice.controller.InvoiceController;
 import cast.testapp.invoice.entities.Invoice;
 import cast.testapp.receipt.boundary.ReceiptManager;
 import cast.testapp.receipt.boundary.impl.ReceiptManagerImpl;
-import cast.testapp.catastro.clientes.DocumentType;
 import cast.testapp.receipt.entities.ErrorMessage;
 import cast.testapp.receipt.entities.Receipt;
 

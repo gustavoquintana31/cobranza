@@ -6,10 +6,8 @@
 package cast.testapp.receipt.controller;
 
 import cast.testapp.catastro.clientes.ClienteController;
-import cast.testapp.catastro.clientes.ValidacionClientesException;
 import cast.testapp.catastro.clientes.Cliente;
 import cast.testapp.catastro.clientes.Cliente.TipoDoc;
-import cast.testapp.catastro.clientes.MensajeError;
 import cast.testapp.invoice.controller.InvoiceController;
 import cast.testapp.invoice.entities.Invoice;
 import cast.testapp.receipt.boundary.ReceiptManager;
@@ -27,7 +25,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -76,7 +73,7 @@ public class ReceiptControllerTest {
         //parametros
         String nroDoc="234";
         Date fecha  = new Date();
-        when(mockClientCtrl.consultarCliente(DocumentType.CI, nroDoc)).thenReturn(null);
+        when(mockClientCtrl.consultaUno(DocumentType.CI, nroDoc)).thenReturn(null);
         
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class, () -> {
@@ -94,14 +91,22 @@ public class ReceiptControllerTest {
         String nroDoc="234";
         Date fecha  = new Date();
         //inicializacion
-        Cliente cliente = new Cliente(TipoDoc.CIP,nroDoc,"","");        
-        when(mockClientCtrl.consultarCliente(DocumentType.CI, nroDoc)).thenReturn(cliente);
+        Cliente cliente = getCliente(nroDoc);
+
+        when(mockClientCtrl.consultaUno(DocumentType.CI, nroDoc)).thenReturn(cliente);
         List<Invoice> listInvoices = instance.listPendingInvoicesByClient(DocumentType.CI, nroDoc, fecha);
         assertTrue("No se encontro ninguna factura pendiente", listInvoices.isEmpty());
     }
 
-    
-     @Test
+    private Cliente getCliente(String nroDoc) {
+        Cliente cliente = new Cliente();
+        cliente.setTipoDoc(TipoDoc.CIP.toString());
+        cliente.setNumeroDoc(nroDoc);
+        return cliente;
+    }
+
+
+    @Test
     public void testListPendingInvoicesByDatesBeforeActualDate() {                
         //parametros
         String nroDoc="234";
@@ -111,9 +116,9 @@ public class ReceiptControllerTest {
         calendario.set(Calendar.YEAR,2015);
         
         //Mock Clientes
-        Cliente cliente = new Cliente(TipoDoc.CIP,nroDoc,"","");        
+        Cliente cliente = getCliente(nroDoc);
         cliente.id=1l;
-        when(mockClientCtrl.consultarCliente(DocumentType.CI, nroDoc)).thenReturn(cliente);
+        when(mockClientCtrl.consultaUno(DocumentType.CI, nroDoc)).thenReturn(cliente);
         
         //Mock InvoiceCtrl
         when(mockInvoiceCtrl.listPendingInvoicesByClient(cliente.id, calendario.getTime())).thenReturn(Collections.EMPTY_LIST);
@@ -136,9 +141,9 @@ public class ReceiptControllerTest {
         calendario.set(Calendar.YEAR,2099);
         
         //Mock Clientes
-        Cliente cliente = new Cliente(TipoDoc.CIP,nroDoc,"","");        
+        Cliente cliente = getCliente(nroDoc);
         cliente.id=1l;
-        when(mockClientCtrl.consultarCliente(DocumentType.CI, nroDoc)).thenReturn(cliente);
+        when(mockClientCtrl.consultaUno(DocumentType.CI, nroDoc)).thenReturn(cliente);
         
         //Mock InvoiceCtrl
         when(mockInvoiceCtrl.listPendingInvoicesByClient(cliente.id, calendario.getTime())).thenReturn(Collections.EMPTY_LIST);
