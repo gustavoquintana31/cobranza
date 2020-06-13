@@ -14,5 +14,8 @@ import util.GenericDao;
  * @author cbustamante
  */
 public interface ReceiptManager extends GenericDao<Receipt, Integer> {
+
+    String getLastReceiptNumber();
+
     
 }
