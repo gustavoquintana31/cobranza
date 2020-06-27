@@ -146,7 +146,7 @@ public class ReceiptControllerTest {
         when(mockClientCtrl.consultaUno(DocumentType.CI, nroDoc)).thenReturn(cliente);
         
         //Mock InvoiceCtrl
-        when(mockInvoiceCtrl.listPendingInvoicesByClient(cliente.id, calendario.getTime())).thenReturn(Collections.EMPTY_LIST);
+        //when(mockInvoiceCtrl.listPendingInvoicesByClient(cliente.id, calendario.getTime())).thenReturn(Collections.EMPTY_LIST);
               
         //Invocar a la validacion de facturas pendientes por cliente
         List<Invoice> listInvoices = instance.listPendingInvoicesByClient(DocumentType.CI, nroDoc, calendario.getTime());
@@ -194,7 +194,7 @@ public class ReceiptControllerTest {
 
         when(mockReceiptMgr.getLastReceiptNumber()).thenReturn("001-001-0000001");
 
-        when(mockReceiptMgr.add(receipt)).thenReturn(false);
+        //when(mockReceiptMgr.add(receipt)).thenReturn(false);
 
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class, () -> {
@@ -215,12 +215,12 @@ public class ReceiptControllerTest {
         Invoice invoice = new Invoice();
         invoice.setId(1);
         invoiceList.add(invoice);
-        when(mockReceiptMgr.getLastReceiptNumber()).thenReturn("001-001-0000001");
+        //when(mockReceiptMgr.getLastReceiptNumber()).thenReturn("001-001-0000001");
 
         //Validar si ingreso o no en este metodo
         //Mockito.verify(instance, Mockito.never()).getUniqueReceiptNumber("001-001-0000001");
 
-        when(mockReceiptMgr.add(receipt)).thenReturn(true);
+        //when(mockReceiptMgr.add(receipt)).thenReturn(true);
         //instance.receiptInvoicePending(cliente, invoiceList);
     }
 
